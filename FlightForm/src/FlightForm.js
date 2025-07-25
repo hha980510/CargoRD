@@ -73,20 +73,44 @@ function FlightForm() {
     const min = pad(now.getMinutes());
     const datetime = `${yyyy}-${mm}-${dd}T${hh}:${min}`;
 
+    const checklistSections = [
+      'Documentation – 2hr prior to flight arrival',
+      'Pre-flight preparation – 1hr prior to flight arrival',
+      'Confirm items prior to/upon flight arrival',
+      'Confirm items prior to start unloading',
+      'Supervision for unloading operations',
+      'Dangerous Goods',
+      'Confirm items after completion of unloading',
+      'Additional operation'
+    ];
+    const checklistCount = {
+      'Documentation – 2hr prior to flight arrival': 5,
+      'Pre-flight preparation – 1hr prior to flight arrival': 4,
+      'Confirm items prior to/upon flight arrival': 7,
+      'Confirm items prior to start unloading': 4,
+      'Supervision for unloading operations': 5,
+      'Dangerous Goods': 3,
+      'Confirm items after completion of unloading': 4,
+      'Additional operation': 2,
+    };
+
     const defaultChecks = {};
-
-    const checklistCounts = [5, 4, 7, 4, 5, 3, 4, 2];
-
-    ['in', 'out'].forEach(prefix => {
-      checklistTitles.forEach((title, idx) => {
-        for (let i = 0; i < checklistCounts[idx]; i++) {
-          defaultChecks[`${prefix}-check-${title}-${i}`] = 'Yes';
+    ['in', 'out'].forEach(direction => {
+      checklistSections.forEach(section => {
+        const count = checklistCount[section];
+        for (let i = 0; i < count; i++) {
+          const key = `${direction}-check-[${section}]-${i}`;
+          defaultChecks[key] = 'Yes';
         }
       });
     });
 
-    setForm(f => ({
-      ...f,
+    setForm(prev => ({
+      ...prev,
+      airline: 'OZ',
+      airline2: 'OZ',
+      flight_number: '',
+      flight_number2: '',
       eta: datetime,
       etd: datetime,
       landing: datetime,
@@ -98,6 +122,7 @@ function FlightForm() {
       ...defaultChecks
     }));
   }, []);
+
 
   const getCurrentDateTime = () => {
     const now = new Date();
