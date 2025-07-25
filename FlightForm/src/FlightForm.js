@@ -490,11 +490,11 @@ const handleSubmit = (e) => {
       <br />
             <button type="button" onClick={() => {
         navigator.clipboard.writeText(formatEmailBody())
-          .then(() => alert('✂️ 복사 완료! 메일에 붙여넣기 하세요.\n'))
+          .then(() => alert('✂️ 복사 완료! 메일에 붙여넣기 하세요.'))
           .catch(err => alert('❌ 복사 실패: ' + err));
       }}>
         📋 내용 복사 (Text Copy)
-      </button>
+      </button><br></br>
       <button type="submit">SUBMIT</button>
     </form>
   );
