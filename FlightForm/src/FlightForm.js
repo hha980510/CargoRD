@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import GoogleLoginButton from './components/GoogleLoginButton';
-import html2canvas from 'html2canvas';
 
 /* global google */
 
@@ -11,7 +10,7 @@ function FlightForm() {
 
       const checklistItems = {
       '[Documentation] – 2hr prior to flight arrival': [
-        '1. GD / PTP Clearance (Stamped)',
+        ' GD / PTP Clearance (Stamped)',
         '2. Inbound flight irregularities check, MSG check',
         '3. Build up status and ULD check',
         '4. Weight check with Dim & Weight sheet, MFST WT vs Actual WT',
@@ -475,7 +474,7 @@ const handleSubmit = (e) => {
       <br />
             <button type="button" onClick={() => {
         navigator.clipboard.writeText(formatEmailBody())
-          .then(() => alert('✂️ 복사 완료! 메일에 붙여넣기 하세요.'))
+          .then(() => alert('✂️ 복사 완료! 메일에 붙여넣기 하세요.\n'))
           .catch(err => alert('❌ 복사 실패: ' + err));
       }}>
         📋 내용 복사 (Text Copy)
