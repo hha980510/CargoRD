@@ -167,22 +167,25 @@ const formatEmailBody = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const airlineCode = document.getElementById('airline-code')?.value || '';
-  const flightNumber = document.getElementById('flight-number')?.value || '';
-  const eta = document.getElementById('eta')?.value || '';
-  const dateOnly = eta.split('T')[0] || 'Unknown';
+  const airlineCode = document.getElementById("airline-code").value || '';
+  const flightNumber = document.getElementById("flight-number").value || '';
 
-  const subjectText = `Flight Service Check Report - ${airlineCode}${flightNumber} - ${dateOnly}`;
-  const subject = encodeURIComponent(subjectText);
-  const body = encodeURIComponent('Info is attatched as a image');
+  // 현재 날짜 (YYYY-MM-DD 형식)
+  const today = new Date();
+  const formattedDate = today.toISOString().split('T')[0]; // '2025-07-25'
+
+  const subject = encodeURIComponent(`Flight Service Check Report - ${airlineCode}${flightNumber} (${formattedDate})`);
 
   await copyImageToClipboard();
+
+  const body = encodeURIComponent('Info');
 
   window.open(
     `https://mail.google.com/mail/?view=cm&fs=1&su=${subject}&body=${body}`,
     '_blank'
   );
 };
+
 
 
 
