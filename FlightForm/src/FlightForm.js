@@ -176,9 +176,9 @@ const handleSubmit = async (e) => {
 
   await copyImageToClipboard();
 
-  // const body = encodeURIComponent(
-  //   '📎 문서가 복사되었습니다. 이곳에 Ctrl+V 하여 붙여넣기 해주세요!'
-  // );
+  const body = encodeURIComponent(
+     'Info is attatched as a image file.'
+   );
 
   window.open(
     `https://mail.google.com/mail/?view=cm&fs=1&su=${subject}&body=${body}`,
