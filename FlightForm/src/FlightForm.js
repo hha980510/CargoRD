@@ -170,21 +170,20 @@ const handleSubmit = async (e) => {
   const airlineCode = document.getElementById('airline-code')?.value || '';
   const flightNumber = document.getElementById('flight-number')?.value || '';
   const eta = document.getElementById('eta')?.value || '';
+  const dateOnly = eta.split('T')[0] || 'Unknown';
 
-  const subjectRaw = `Flight Service Check Report - ${airlineCode}${flightNumber} (${eta})`;
-  const subject = encodeURIComponent(subjectRaw);
+  const subjectText = `Flight Service Check Report - ${airlineCode}${flightNumber} - ${dateOnly}`;
+  const subject = encodeURIComponent(subjectText);
+  const body = encodeURIComponent('Info is attatched as a image');
 
   await copyImageToClipboard();
-
-  const body = encodeURIComponent(
-     'Info is attatched as a image file.'
-   );
 
   window.open(
     `https://mail.google.com/mail/?view=cm&fs=1&su=${subject}&body=${body}`,
     '_blank'
   );
 };
+
 
 
 
