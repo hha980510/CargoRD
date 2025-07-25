@@ -22,7 +22,7 @@ function FlightForm() {
         ]);
         alert('✔️ 이미지가 클립보드에 복사되었습니다!\nGmail 창에 Ctrl+V 하세요.');
       } catch (err) {
-        alert('❌ 클립보드 복사 실패: 보안 정책으로 인해 HTTPS에서만 작동할 수 있습니다.');
+        alert('클립보드 복사 실패: 보안 정책으로 인해 HTTPS에서만 작동할 수 있습니다.');
         console.error(err);
       }
     });
