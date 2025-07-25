@@ -157,7 +157,7 @@ const formatEmailBody = () => {
   Object.entries(checklistItems).forEach(([section, items]) => {
     result += `[${section}]\n`;
     items.forEach((label, idx) => {
-      const key = `in-check-${section}-${idx}`;
+      const key = `in-check-[${section}]-${idx}`;
       result += `${idx + 1}. ${label}: ${form[key] || 'N/A'}\n`;
     });
     result += '\n';
@@ -173,7 +173,7 @@ const formatEmailBody = () => {
   Object.entries(checklistItems).forEach(([section, items]) => {
     result += `[${section}]\n`;
     items.forEach((label, idx) => {
-      const key = `out-check-${section}-${idx}`;
+      const key = `out-check-[${section}]-${idx}`;
       result += `${idx + 1}. ${label}: ${form[key] || 'N/A'}\n`;
     });
     result += '\n';
