@@ -74,7 +74,7 @@ function FlightForm() {
     const datetime = `${yyyy}-${mm}-${dd}T${hh}:${min}`;
 
     const checklistSections = [
-      'Documentation',
+      'Documentation – 2hr prior to flight arrival',
       'Pre-flight preparation',
       'Confirm items prior to/upon flight arrival',
       'Confirm items prior to start unloading',
@@ -84,7 +84,7 @@ function FlightForm() {
       'Additional operation'
     ];
     const checklistCount = {
-      'Documentation': 5,
+      'Documentation – 2hr prior to flight arrival': 5,
       'Pre-flight preparation': 4,
       'Confirm items prior to/upon flight arrival': 7,
       'Confirm items prior to start unloading': 4,
@@ -157,7 +157,7 @@ const formatEmailBody = () => {
   Object.entries(checklistItems).forEach(([section, items]) => {
     result += `[${section}]\n`;
     items.forEach((label, idx) => {
-      const key = `in-check-[${section}]-${idx}`;
+      const key = `in-check-${section}-${idx}`;
       result += `${idx + 1}. ${label}: ${form[key] || 'N/A'}\n`;
     });
     result += '\n';
@@ -173,7 +173,7 @@ const formatEmailBody = () => {
   Object.entries(checklistItems).forEach(([section, items]) => {
     result += `[${section}]\n`;
     items.forEach((label, idx) => {
-      const key = `out-check-[${section}]-${idx}`;
+      const key = `out-check-${section}-${idx}`;
       result += `${idx + 1}. ${label}: ${form[key] || 'N/A'}\n`;
     });
     result += '\n';
