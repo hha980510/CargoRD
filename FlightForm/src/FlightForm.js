@@ -167,15 +167,17 @@ const formatEmailBody = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
+  const airlineCode = document.getElementById('airline-code')?.value || '';
   const flightNumber = document.getElementById('flight-number')?.value || '';
   const eta = document.getElementById('eta')?.value || '';
-  const subjectText = `Flight Service Check Report - ${flightNumber} - ${eta}`;
-  const subject = encodeURIComponent(subjectText);
+
+  const subjectRaw = `Flight Service Check Report - ${airlineCode}${flightNumber} (${eta})`;
+  const subject = encodeURIComponent(subjectRaw);
 
   await copyImageToClipboard();
 
   // const body = encodeURIComponent(
-  //   ''
+  //   '📎 문서가 복사되었습니다. 이곳에 Ctrl+V 하여 붙여넣기 해주세요!'
   // );
 
   window.open(
@@ -183,6 +185,7 @@ const handleSubmit = async (e) => {
     '_blank'
   );
 };
+
 
 
   const handleLogout = () => {
