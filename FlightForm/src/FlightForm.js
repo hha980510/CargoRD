@@ -176,7 +176,7 @@ const handleSubmit = (e) => {
   const subject = encodeURIComponent(`Flight Service Check Report - ${airlineCode}${flightNumber} (${dateStr})`);
 
   const body = encodeURIComponent(
-    '복사된 문서를 여기에 붙여넣기(Ctrl+V) 하세요.'
+    ''
   );
 
   window.open(
