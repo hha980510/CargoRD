@@ -169,12 +169,9 @@ const handleSubmit = async (e) => {
 
   const airlineCode = document.getElementById("airline-code").value || '';
   const flightNumber = document.getElementById("flight-number").value || '';
+  const eta = document.getElementById("eta").value || '';
 
-  // 현재 날짜 (YYYY-MM-DD 형식)
-  const today = new Date();
-  const formattedDate = today.toISOString().split('T')[0]; // '2025-07-25'
-
-  const subject = encodeURIComponent(`Flight Service Check Report - ${airlineCode}${flightNumber} (${formattedDate})`);
+  const subject = encodeURIComponent(`Flight Service Check Report - ${airlineCode}${flightNumber} (${eta})`);
 
   await copyImageToClipboard();
 
@@ -185,7 +182,6 @@ const handleSubmit = async (e) => {
     '_blank'
   );
 };
-
 
 
 
