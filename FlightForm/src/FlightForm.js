@@ -9,25 +9,6 @@ function FlightForm() {
   const [form, setForm] = useState({});
   const [userEmail, setUserEmail] = useState('');
 
-    const copyImageToClipboard = async () => {
-    const element = document.getElementById('flight-form');
-    const canvas = await html2canvas(element, {scale: 3});
-
-    canvas.toBlob(async (blob) => {
-      try {
-        await navigator.clipboard.write([
-          new ClipboardItem({
-            'image/png': blob
-          })
-        ]);
-        alert('✔️ 이미지가 클립보드에 복사되었습니다!\nGmail 창에 Ctrl+V 하세요.');
-      } catch (err) {
-        alert('클립보드 복사 실패: 보안 정책으로 인해 HTTPS에서만 작동할 수 있습니다.');
-        console.error(err);
-      }
-    });
-    };
-
       const checklistItems = {
       '[Documentation] – 2hr prior to flight arrival': [
         '1. GD / PTP Clearance (Stamped)',
@@ -164,7 +145,7 @@ const formatEmailBody = () => {
 };
 
 
-const handleSubmit = async (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
 
   const airlineCode = form.airline || '';
@@ -179,10 +160,8 @@ const handleSubmit = async (e) => {
   const dateStr = `${yyyy}-${mm}-${dd}`;
   const subject = encodeURIComponent(`Flight Service Check Report - ${airlineCode}${flightNumber} (${dateStr})`);
 
-  await copyImageToClipboard(); // 클립보드 실패 시 fallback 고려
-
   const body = encodeURIComponent(
-    '📎 문서가 복사되었습니다. 이곳에 Ctrl+V 하여 붙여넣기 해주세요!'
+    '복사된 문서를 여기에 붙여넣기(Ctrl+V) 하세요.'
   );
 
   window.open(
@@ -190,6 +169,7 @@ const handleSubmit = async (e) => {
     '_blank'
   );
 };
+
 
 
 
@@ -493,6 +473,13 @@ const handleSubmit = async (e) => {
       ])}
 
       <br />
+            <button type="button" onClick={() => {
+        navigator.clipboard.writeText(formatEmailBody())
+          .then(() => alert('✂️ 복사 완료! 메일에 붙여넣기 하세요.'))
+          .catch(err => alert('❌ 복사 실패: ' + err));
+      }}>
+        📋 내용 복사 (Text Copy)
+      </button>
       <button type="submit">SUBMIT</button>
     </form>
   );
