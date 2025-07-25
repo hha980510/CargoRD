@@ -74,8 +74,8 @@ function FlightForm() {
     const datetime = `${yyyy}-${mm}-${dd}T${hh}:${min}`;
 
     const checklistSections = [
-      'Documentation – 2hr prior to flight arrival',
-      'Pre-flight preparation – 1hr prior to flight arrival',
+      'Documentation',
+      'Pre-flight preparation',
       'Confirm items prior to/upon flight arrival',
       'Confirm items prior to start unloading',
       'Supervision for unloading operations',
@@ -84,8 +84,8 @@ function FlightForm() {
       'Additional operation'
     ];
     const checklistCount = {
-      'Documentation – 2hr prior to flight arrival': 5,
-      'Pre-flight preparation – 1hr prior to flight arrival': 4,
+      'Documentation': 5,
+      'Pre-flight preparation': 4,
       'Confirm items prior to/upon flight arrival': 7,
       'Confirm items prior to start unloading': 4,
       'Supervision for unloading operations': 5,
