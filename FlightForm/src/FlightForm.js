@@ -124,7 +124,7 @@ const formatEmailBody = () => {
 
   // 1. Inbound 항공 정보
   result += `=== INBOUND FLIGHT INFO ===\n`;
-  result += `Flight Number (IN): ${form.airline || ''} ${form.flight_number || ''}\n`;
+  result += `Flight Number (IN): ${form.airline || 'OZ'} ${form.flight_number || ''}\n`;
   result += `ETA: ${form.eta}\nETD: ${form.etd}\nLanding: ${form.landing}\nRamp In: ${form.rampin}\n\n`;
 
   // 2. Inbound 체크리스트
@@ -140,7 +140,7 @@ const formatEmailBody = () => {
 
   // 3. Outbound 항공 정보
   result += `=== OUTBOUND FLIGHT INFO ===\n`;
-  result += `Flight Number (OUT): ${form.airline2 || ''} ${form.flight_number2 || ''}\n`;
+  result += `Flight Number (OUT): ${form.airline2 || 'OZ'} ${form.flight_number2 || ''}\n`;
   result += `ETA (OUT): ${form.eta2}\nETD (OUT): ${form.etd2}\nLanding (OUT): ${form.landing2}\nRamp In (OUT): ${form.rampin2}\n\n`;
 
   // 4. Outbound 체크리스트
