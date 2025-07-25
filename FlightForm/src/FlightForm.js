@@ -167,20 +167,22 @@ const formatEmailBody = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const subject = encodeURIComponent('Flight Service Check Report');
+  const flightNumber = document.getElementById('flight-number')?.value || '';
+  const eta = document.getElementById('eta')?.value || '';
+  const subjectText = `Flight Service Check Report - ${flightNumber} - ${eta}`;
+  const subject = encodeURIComponent(subjectText);
 
   await copyImageToClipboard();
 
-  const body = encodeURIComponent(
-    '📎 문서가 복사되었습니다. 이곳에 Ctrl+V 하여 붙여넣기 해주세요!'
-  );
+  // const body = encodeURIComponent(
+  //   ''
+  // );
 
   window.open(
     `https://mail.google.com/mail/?view=cm&fs=1&su=${subject}&body=${body}`,
     '_blank'
   );
 };
-
 
 
   const handleLogout = () => {
