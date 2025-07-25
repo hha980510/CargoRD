@@ -11,7 +11,7 @@ function FlightForm() {
 
     const copyImageToClipboard = async () => {
     const element = document.getElementById('flight-form');
-    const canvas = await html2canvas(element);
+    const canvas = await html2canvas(element, {scale: 2});
 
     canvas.toBlob(async (blob) => {
       try {
