@@ -1,0 +1,96 @@
+body {
+  font-family: sans-serif;
+  background: #f8f9fa;
+  padding: 2rem;
+}
+
+/* 제목 */
+.report-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 전체 폼 박스 */
+form {
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 입력 필드 */
+input, select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* 버튼 스타일 */
+button {
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
+
+/* 체크리스트 한 줄 */
+.check-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+/* 항목 텍스트 */
+.check-item span {
+  flex: 1 1 70%;
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* 라디오 버튼 묶음 */
+.check-item label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.check-item input[type="radio"]:checked {
+  accent-color: #007bff; /* 체크 색상 파란색으로 */
+}
+
+.time-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.time-input-group input[type="datetime-local"] {
+  flex: 1;
+  font-size: 1rem;
+  padding: 0.4rem;
+  box-sizing: border-box;
+}
+
+.time-input-group button {
+  height: auto;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  line-height: 1.2;
+}
