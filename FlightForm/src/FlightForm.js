@@ -75,7 +75,7 @@ function FlightForm() {
 
     const checklistSections = [
       'Documentation – 2hr prior to flight arrival',
-      'Pre-flight preparation',
+      'Pre-flight preparation – 1hr prior to flight arrival',
       'Confirm items prior to/upon flight arrival',
       'Confirm items prior to start unloading',
       'Supervision for unloading operations',
@@ -85,7 +85,7 @@ function FlightForm() {
     ];
     const checklistCount = {
       'Documentation – 2hr prior to flight arrival': 5,
-      'Pre-flight preparation': 4,
+      'Pre-flight preparation – 1hr prior to flight arrival': 4,
       'Confirm items prior to/upon flight arrival': 7,
       'Confirm items prior to start unloading': 4,
       'Supervision for unloading operations': 5,
@@ -328,7 +328,7 @@ const handleSubmit = (e) => {
         </div><br />
       </div>
 
-      {renderChecklist('in','[Documentation] – 2hr prior to flight arrival', [
+      {renderChecklist('in','[Documentation – 2hr prior to flight arrival]', [
         '1. GD / PTP Clearance (Stamped):',
         '2. Inbound flight irregularities check, MSG check:',
         '3. Build up status and ULD check:',
@@ -336,7 +336,7 @@ const handleSubmit = (e) => {
         '5. W/B LIR compare to Deadload sheet:'
       ])}
 
-      {renderChecklist('in','[Pre-flight preparation] – 1hr prior to flight arrival', [
+      {renderChecklist('in','[Pre-flight preparation – 1hr prior to flight arrival]', [
         '1. Confirm cargo info, including DG or special CGO:',
         '2. Confirm ULD/CGO info to be left in transit A/C:',
         '3. Nose Offload Required:',
@@ -454,7 +454,7 @@ const handleSubmit = (e) => {
         </div><br />
       </div>
 
-      {renderChecklist('out','[Documentation] – 2hr prior to flight arrival', [
+      {renderChecklist('out','[Documentation – 2hr prior to flight arrival]', [
         '1. GD / PTP Clearance (Stamped):',
         '2. Inbound flight irregularities check, MSG check:',
         '3. Build up status and ULD check:',
@@ -462,7 +462,7 @@ const handleSubmit = (e) => {
         '5. W/B LIR compare to Deadload sheet:'
       ])}
 
-      {renderChecklist('out','[Pre-flight preparation] – 1hr prior to flight arrival', [
+      {renderChecklist('out','[Pre-flight preparation – 1hr prior to flight arrival]', [
         '1. Confirm cargo info, including DG or special CGO:',
         '2. Confirm ULD/CGO info to be left in transit A/C:',
         '3. Nose Offload Required:',
