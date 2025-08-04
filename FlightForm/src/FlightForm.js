@@ -272,7 +272,7 @@ const handleSubmit = (e) => {
           />
         )}
       </div>
-    </div>
+    </div><br></br>
 
           <div style={{ textAlign: 'left' }}>
         <label>Airline Code:</label><br />
