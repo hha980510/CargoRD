@@ -300,7 +300,7 @@ const handleSubmit = (e) => {
             onChange={handleChange}
             required
           />
-          <button type="button" onClick={() => handleNowClick('etd')}>Now</button>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('etd')}>Now</button>
         </div><br />
 
         <label>Landing Time:</label><br />
@@ -312,7 +312,7 @@ const handleSubmit = (e) => {
             onChange={handleChange}
             required
           />
-          <button type="button" onClick={() => handleNowClick('landing')}>Now</button>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('landing')}>Now</button>
         </div><br />
 
         <label>Ramp In Time:</label><br />
@@ -324,7 +324,7 @@ const handleSubmit = (e) => {
             onChange={handleChange}
             required
           />
-          <button type="button" onClick={() => handleNowClick('rampin')}>Now</button>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('rampin')}>Now</button>
         </div><br />
       </div>
 
@@ -414,7 +414,7 @@ const handleSubmit = (e) => {
             onChange={handleChange}
             required
           />
-          <button type="button" onClick={() => handleNowClick('eta2')}>Now</button>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('eta2')}>Now</button>
         </div><br />
 
         <label>ETD:</label><br />
@@ -426,7 +426,7 @@ const handleSubmit = (e) => {
             onChange={handleChange}
             required
           />
-          <button type="button" onClick={() => handleNowClick('etd2')}>Now</button>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('etd2')}>Now</button>
         </div><br />
 
         <label>Landing Time:</label><br />
@@ -438,7 +438,7 @@ const handleSubmit = (e) => {
             onChange={handleChange}
             required
           />
-          <button type="button" onClick={() => handleNowClick('landing2')}>Now</button>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('landing2')}>Now</button>
         </div><br />
 
         <label>Ramp In Time:</label><br />
@@ -450,7 +450,7 @@ const handleSubmit = (e) => {
             onChange={handleChange}
             required
           />
-          <button type="button" onClick={() => handleNowClick('rampin2')}>Now</button>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('rampin2')}>Now</button>
         </div><br />
       </div>
 
@@ -513,14 +513,14 @@ const handleSubmit = (e) => {
       ])}
 
       <br />
-            <button type="button" onClick={() => {
+            <button type="button" className="btn btn-outline-secondary" onClick={() => {
         navigator.clipboard.writeText(formatEmailBody())
           .then(() => alert('✂️ 복사 완료! 메일에 붙여넣기 하세요.'))
           .catch(err => alert('❌ 복사 실패: ' + err));
       }}>
         📋 내용 복사 (Text Copy)
       </button><br></br><br></br>
-      <button type="submit">SUBMIT</button>
+      <button type="submit" className="btn btn-primary">SUBMIT</button>
     </form>
   );
 }

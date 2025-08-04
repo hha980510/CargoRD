@@ -34,7 +34,7 @@ input, select {
   box-sizing: border-box;
 }
 
-/* 버튼 스타일 */
+/* 버튼 스타일
 button {
   background: #007bff;
   color: white;
@@ -46,7 +46,7 @@ button {
 }
 button:hover {
   background: #0056b3;
-}
+} */
 
 /* 체크리스트 한 줄 */
 .check-item {
