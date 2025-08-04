@@ -56,8 +56,8 @@ function FlightForm() {
         'Confirm all of end locks engaged between ULD and empty position [Photo]'
       ],
       'Additional operation': [
-        'Notify to OZ rep when flight crews in/out',
-        'Notify to OZ rep when service provider show up (Catering. Fuler, Flight operation, Security, De-icing)'
+        'Notify to KJ rep when flight crews in/out',
+        'Notify to KJ rep when service provider show up (Catering. Fuler, Flight operation, Security, De-icing)'
       ]
     };
 
@@ -107,8 +107,8 @@ function FlightForm() {
 
     setForm(prev => ({
       ...prev,
-      airline: 'OZ',
-      airline2: 'OZ',
+      airline: 'KJ',
+      airline2: 'KJ',
       flight_number: '',
       flight_number2: '',
       eta: datetime,
@@ -149,7 +149,7 @@ const formatEmailBody = () => {
 
   // 1. Inbound 항공 정보
   result += `=== INBOUND FLIGHT INFO ===\n`;
-  result += `Flight Number (IN): ${form.airline || 'OZ'} ${form.flight_number || ''}\n`;
+  result += `Flight Number (IN): ${form.airline || 'KJ'} ${form.flight_number || ''}\n`;
   result += `ETA: ${form.eta}\nETD: ${form.etd}\nLanding: ${form.landing}\nRamp In: ${form.rampin}\n\n`;
 
   // 2. Inbound 체크리스트
@@ -165,7 +165,7 @@ const formatEmailBody = () => {
 
   // 3. Outbound 항공 정보
   result += `=== OUTBOUND FLIGHT INFO ===\n`;
-  result += `Flight Number (OUT): ${form.airline2 || 'OZ'} ${form.flight_number2 || ''}\n`;
+  result += `Flight Number (OUT): ${form.airline2 || 'KJ'} ${form.flight_number2 || ''}\n`;
   result += `ETA (OUT): ${form.eta2}\nETD (OUT): ${form.etd2}\nLanding (OUT): ${form.landing2}\nRamp In (OUT): ${form.rampin2}\n\n`;
 
   // 4. Outbound 체크리스트
@@ -277,8 +277,8 @@ const handleSubmit = (e) => {
 
           <div style={{ textAlign: 'left' }}>
         <label>Airline Code:</label><br />
-        <select name="airline" value={form.airline || 'OZ'} onChange={handleChange}>
-          <option value="OZ">OZ</option>
+        <select name="airline" value={form.airline || 'KJ'} onChange={handleChange}>
+          <option value="KJ">KJ</option>
           <option value="KE">KE</option>
           <option value="QR">QR</option>
         </select><br />
@@ -395,16 +395,16 @@ const handleSubmit = (e) => {
       ])}
 
       {renderChecklist('in','[Additional operation]', [
-        '1. Notify to OZ rep when flight crews in/out:',
-        '2. Notify to OZ rep when service provider show up (Catering. Fuler, Flight operation, Security, De-icing):'
+        '1. Notify to KJ rep when flight crews in/out:',
+        '2. Notify to KJ rep when service provider show up (Catering. Fuler, Flight operation, Security, De-icing):'
       ])}
 
       <br />
       <h1 className="display-6 text-primary fw-semibold mt-5 mb-4">Flight Service Check Report - Outbound</h1>
           <div style={{ textAlign: 'left' }}>
         <label>Airline Code:</label><br />
-        <select name="airline2" value={form.airline2 || 'OZ'} onChange={handleChange}>
-          <option value="OZ">OZ</option>
+        <select name="airline2" value={form.airline2 || 'KJ'} onChange={handleChange}>
+          <option value="KJ">KJ</option>
           <option value="KE">KE</option>
           <option value="QR">QR</option>
         </select><br />
@@ -521,8 +521,8 @@ const handleSubmit = (e) => {
       ])}
 
       {renderChecklist('out','[Additional operation]', [
-        '1. Notify to OZ rep when flight crews in/out:',
-        '2. Notify to OZ rep when service provider show up (Catering. Fuler, Flight operation, Security, De-icing):'
+        '1. Notify to KJ rep when flight crews in/out:',
+        '2. Notify to KJ rep when service provider show up (Catering. Fuler, Flight operation, Security, De-icing):'
       ])}
 
       <br />
