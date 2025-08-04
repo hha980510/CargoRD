@@ -288,7 +288,7 @@ const handleSubmit = (e) => {
             onChange={handleChange}
             required
           />
-          <button type="button" onClick={() => handleNowClick('eta')}>Now</button>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('eta')}>Now</button>
         </div><br />
 
         <label>ETD:</label><br />
