@@ -25,14 +25,14 @@ form {
   overflow-wrap: break-word;
 }
 
-/* 입력 필드 */
+/* 입력 필드
 input, select {
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.5rem;
   font-size: 1rem;
   box-sizing: border-box;
-}
+} */
 
 /* 버튼 스타일
 button {
