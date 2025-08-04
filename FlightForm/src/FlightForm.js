@@ -250,10 +250,7 @@ const handleSubmit = (e) => {
   return (
     <form id="flight-form" onSubmit={handleSubmit}>
 
-    <div className="d-flex justify-content-between align-items-center mb-3">
-      <div>
-        <h1 className="display-6 text-primary fw-semibold mb-4">Flight Service Check Report - Inbound</h1>
-      </div>
+
       <div>
         {userEmail ? (
           <>
@@ -271,6 +268,10 @@ const handleSubmit = (e) => {
             onLoginSuccess={(profile) => setUserEmail(profile.email)}
           />
         )}
+      </div>
+    <div className="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h1 className="display-6 text-primary fw-semibold mb-4">Flight Service Check Report - Inbound</h1>
       </div>
     </div><br></br>
 
