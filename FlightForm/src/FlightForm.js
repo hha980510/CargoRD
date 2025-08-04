@@ -274,71 +274,117 @@ const handleSubmit = (e) => {
       </div>
     </div><br></br>
 
-          <div style={{ textAlign: 'left' }}>
-        <label>Airline Code:</label><br />
-        <select name="airline" value={form.airline || 'OZ'} onChange={handleChange}>
+    <div className="mb-4">
+      <div className="mb-3">
+        <label className="form-label">Airline Code:</label>
+        <select
+          className="form-select"
+          name="airline"
+          value={form.airline || 'OZ'}
+          onChange={handleChange}
+        >
           <option value="OZ">OZ</option>
           <option value="KE">KE</option>
           <option value="QR">QR</option>
-        </select><br />
+        </select>
+      </div>
 
-        <label>Flight Number:</label><br />
+      <div className="mb-3">
+        <label className="form-label">Flight Number:</label>
         <input
           type="text"
+          className="form-control"
           name="flight_number"
           value={form.flight_number || ''}
           onChange={handleChange}
           required
-        /><br />
+        />
+      </div>
 
-        <label>ETA:</label><br />
-        <div className="time-input-group">
+      <div className="mb-3">
+        <label className="form-label">ETA:</label>
+        <div className="input-group">
           <input
             type="datetime-local"
+            className="form-control"
             name="eta"
             value={form.eta || ''}
             onChange={handleChange}
             required
           />
-          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('eta')}>Now</button>
-        </div><br />
+          <button
+            type="button"
+            className="btn btn-outline-secondary"
+            onClick={() => handleNowClick('eta')}
+          >
+            Now
+          </button>
+        </div>
+      </div>
 
-        <label>ETD:</label><br />
-        <div className="time-input-group">
+      <div className="mb-3">
+        <label className="form-label">ETD:</label>
+        <div className="input-group">
           <input
             type="datetime-local"
+            className="form-control"
             name="etd"
             value={form.etd || ''}
             onChange={handleChange}
             required
           />
-          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('etd')}>Now</button>
-        </div><br />
+          <button
+            type="button"
+            className="btn btn-outline-secondary"
+            onClick={() => handleNowClick('etd')}
+          >
+            Now
+          </button>
+        </div>
+      </div>
 
-        <label>Landing Time:</label><br />
-        <div className="time-input-group">
+      <div className="mb-3">
+        <label className="form-label">Landing Time:</label>
+        <div className="input-group">
           <input
             type="datetime-local"
+            className="form-control"
             name="landing"
             value={form.landing || ''}
             onChange={handleChange}
             required
           />
-          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('landing')}>Now</button>
-        </div><br />
+          <button
+            type="button"
+            className="btn btn-outline-secondary"
+            onClick={() => handleNowClick('landing')}
+          >
+            Now
+          </button>
+        </div>
+      </div>
 
-        <label>Ramp In Time:</label><br />
-        <div className="time-input-group">
+      <div className="mb-3">
+        <label className="form-label">Ramp In Time:</label>
+        <div className="input-group">
           <input
             type="datetime-local"
+            className="form-control"
             name="rampin"
             value={form.rampin || ''}
             onChange={handleChange}
             required
           />
-          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('rampin')}>Now</button>
-        </div><br />
+          <button
+            type="button"
+            className="btn btn-outline-secondary"
+            onClick={() => handleNowClick('rampin')}
+          >
+            Now
+          </button>
+        </div>
       </div>
+    </div>
 
       {renderChecklist('in','[Documentation – 2hr prior to flight arrival]', [
         '1. GD / PTP Clearance (Stamped):',
@@ -399,72 +445,120 @@ const handleSubmit = (e) => {
       ])}
 
       <br />
-      <h2 className="report-title">Flight Service Check Report - Outbound</h2>
-          <div style={{ textAlign: 'left' }}>
-        <label>Airline Code:</label><br />
-        <select name="airline2" value={form.airline2 || 'OZ'} onChange={handleChange}>
+    <h2 className="report-title mb-4">Flight Service Check Report - Outbound</h2>
+
+    <div className="mb-4">
+      <div className="mb-3">
+        <label className="form-label">Airline Code:</label>
+        <select
+          className="form-select"
+          name="airline2"
+          value={form.airline2 || 'OZ'}
+          onChange={handleChange}
+        >
           <option value="OZ">OZ</option>
           <option value="KE">KE</option>
           <option value="QR">QR</option>
-        </select><br />
+        </select>
+      </div>
 
-        <label>Flight Number:</label><br />
+      <div className="mb-3">
+        <label className="form-label">Flight Number:</label>
         <input
           type="text"
+          className="form-control"
           name="flight_number2"
           value={form.flight_number2 || ''}
           onChange={handleChange}
           required
-        /><br />
+        />
+      </div>
 
-        <label>ETA:</label><br />
-        <div className="time-input-group">
+      <div className="mb-3">
+        <label className="form-label">ETA:</label>
+        <div className="input-group">
           <input
             type="datetime-local"
+            className="form-control"
             name="eta2"
             value={form.eta2 || ''}
             onChange={handleChange}
             required
           />
-          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('eta2')}>Now</button>
-        </div><br />
+          <button
+            type="button"
+            className="btn btn-outline-secondary"
+            onClick={() => handleNowClick('eta2')}
+          >
+            Now
+          </button>
+        </div>
+      </div>
 
-        <label>ETD:</label><br />
-        <div className="time-input-group">
+      <div className="mb-3">
+        <label className="form-label">ETD:</label>
+        <div className="input-group">
           <input
             type="datetime-local"
+            className="form-control"
             name="etd2"
             value={form.etd2 || ''}
             onChange={handleChange}
             required
           />
-          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('etd2')}>Now</button>
-        </div><br />
+          <button
+            type="button"
+            className="btn btn-outline-secondary"
+            onClick={() => handleNowClick('etd2')}
+          >
+            Now
+          </button>
+        </div>
+      </div>
 
-        <label>Landing Time:</label><br />
-        <div className="time-input-group">
+      <div className="mb-3">
+        <label className="form-label">Landing Time:</label>
+        <div className="input-group">
           <input
             type="datetime-local"
+            className="form-control"
             name="landing2"
             value={form.landing2 || ''}
             onChange={handleChange}
             required
           />
-          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('landing2')}>Now</button>
-        </div><br />
+          <button
+            type="button"
+            className="btn btn-outline-secondary"
+            onClick={() => handleNowClick('landing2')}
+          >
+            Now
+          </button>
+        </div>
+      </div>
 
-        <label>Ramp In Time:</label><br />
-        <div className="time-input-group">
+      <div className="mb-3">
+        <label className="form-label">Ramp In Time:</label>
+        <div className="input-group">
           <input
             type="datetime-local"
+            className="form-control"
             name="rampin2"
             value={form.rampin2 || ''}
             onChange={handleChange}
             required
           />
-          <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('rampin2')}>Now</button>
-        </div><br />
+          <button
+            type="button"
+            className="btn btn-outline-secondary"
+            onClick={() => handleNowClick('rampin2')}
+          >
+            Now
+          </button>
+        </div>
       </div>
+    </div>
+
 
       {renderChecklist('out','[Documentation – 2hr prior to flight arrival]', [
         '1. GD / PTP Clearance (Stamped):',
