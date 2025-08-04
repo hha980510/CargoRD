@@ -250,17 +250,29 @@ const handleSubmit = (e) => {
   return (
     <form id="flight-form" onSubmit={handleSubmit}>
 
-      <div style={{ textAlign: 'right', marginBottom: '1rem' }}>
+    <div className="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h2 className="report-title m-0">Flight Service Check Report - Inbound</h2>
+      </div>
+      <div>
         {userEmail ? (
           <>
-            <span style={{ fontWeight: 'bold', marginRight: '1rem' }}>Signed in as: {userEmail}</span>
-            <button type="button" onClick={handleLogout}>Logout</button>
+            <span className="me-2 fw-bold">Signed in as: {userEmail}</span>
+            <button
+              type="button"
+              className="btn btn-outline-danger btn-sm"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
           </>
         ) : (
-          <GoogleLoginButton onLoginSuccess={(profile) => setUserEmail(profile.email)} />
+          <GoogleLoginButton
+            onLoginSuccess={(profile) => setUserEmail(profile.email)}
+          />
         )}
-        <h2 className="report-title">Flight Service Check Report - Inbound</h2>
       </div>
+    </div>
 
           <div style={{ textAlign: 'left' }}>
         <label>Airline Code:</label><br />
