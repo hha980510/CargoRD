@@ -342,7 +342,7 @@ const handleSubmit = (e) => {
       </div>
 
       {renderChecklist('in','[Documentation – 2hr prior to flight arrival]', [
-        '1. GD / PTP Clearance (Stamped):',
+        '1. GD / PTP Clearance  (Stamped):',
         '2. Inbound flight irregularities check, MSG check:',
         '3. Build up status and ULD check:',
         '4. Weight check with Dim & Weight sheet, MFST WT vs Actual WT:',
