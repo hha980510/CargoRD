@@ -316,7 +316,7 @@ const handleSubmit = (e) => {
           <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('etd')}>Now</button>
         </div><br />
 
-        <label>Door Close:</label><br />
+        <label>Landing Time:</label><br />
         <div className="time-input-group">
           <input
             type="datetime-local"
@@ -328,7 +328,7 @@ const handleSubmit = (e) => {
           <button type="button" className="btn btn-secondary btn-sm" onClick={() => handleNowClick('landing')}>Now</button>
         </div><br />
 
-        <label>Push Back Time:</label><br />
+        <label>Ramp in Time:</label><br />
         <div className="time-input-group">
           <input
             type="datetime-local"
